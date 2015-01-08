@@ -11,4 +11,4 @@ _IJulia notebooks for the 2015 Winter Power School_
 
 Any notebook changes you make will be saved on your own computer -- they will have no effect on the repository.
 
-[1]: juliabox.org
+[1]: https://juliabox.org/
