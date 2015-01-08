@@ -2,7 +2,7 @@
 _IJulia notebooks for the 2015 Winter Power School_
 
 ## Connecting to JuliaBox
-1. Visit juliabox.org.
+1. Visit [juliabox.org][juliabox.org].
 2. Select the **Sync** tab at the top of the page.
 3. Paste https://github.com/kersulis/IJulia-WPS into the **Git Clone URL** field.
 4. Leaving the **Branch** and **JuliaBox Folder** fields with their default values, click **+** to load the repository into a folder named `IJulia`.
