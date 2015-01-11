@@ -25,6 +25,7 @@ function solver_activeFlow_droop(psDL)
         push!(theta, getValue(θ)[:])
         push!(alpha, getValue(α))
         push!(rho,getValue(ρ)[:])
+        print(idx)
   
         # Compute conventional generation post-instanton:
         push!(Gpost, Gp + k.*getValue(α))
@@ -70,7 +71,7 @@ function droopDCModel(idx, sense, Rp, Gp, Dp, f, t, x, Y, bustype, Plim,k)
     N = length(Rp)
     @defVar(m, ρ[1:N] >= 0) # Add decision variables to model (renewable gen)
     @defVar(m, θ[1:N]) # Add bus angles
-    @defVar(m, α) # mismatch factor
+    @defVar(m, α) # mismatch
     setObjective(m, :Min, 0.5*sum([(ρ[i] - Rp[i])^2 for i in find(Rp)]))
 
     # add power balance constraints:

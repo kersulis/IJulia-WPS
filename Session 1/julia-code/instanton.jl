@@ -3,7 +3,7 @@
 
 # Julia packages used in this code
 using JuMP   # numerical optimization package
-using Ipopt  # Julia interface to MOSEK solver
+using Ipopt  # Julia interface to Ipopt solver
 using MAT    # Julia interface to MATLAB .mat binary files
 using PyCall # used to call python commands
 using PyPlot # Julia plotting package; wraps around Matplotlib
@@ -27,33 +27,33 @@ include("solver_activeFlow_droop.jl")           # Solver with active flows and d
 
 # Define a type to hold power system data:
 type powerSystemData
-    Sb
-    f
-    t
-    r
-    x
-    b
-    Y
-    bustype
-    Gp
-    Gq
-    Dp
-    Dq
-    Rp
-    Rq
-    Pmax
-    Pmin
-    Qmax
-    Qmin
-    Plim
-    Vg
-    Vceiling
-    Vfloor
-    busIdx
-    N
-    Nr
-    Ng
-    k
+    Sb          # Base complex power
+    f           # Lines: "from"
+    t           # Lines: "to"
+    r           # Lines: resistance
+    x           # Lines: reactance
+    b           # Lines: susceptance
+    Y           # Lines: admittance
+    bustype     # Buses: type
+    Gp          # Buses: conv. active gen
+    Gq          # Buses: conv. reactive gen
+    Dp          # Buses: active demand
+    Dq          # Buses: reactive demand
+    Rp          # Buses: wind active gen
+    Rq          # Buses: wind reactive gen
+    Pmax        # Buses: max. active gen
+    Pmin        # Buses: min. active gen
+    Qmax        # Buses: max. reactive gen
+    Qmin        # Buses: min. reactive gen
+    Plim        # Lines: flow limit
+    Vg          # Buses: nominal voltage
+    Vceiling    # Buses: max. voltage
+    Vfloor      # Buses: min. voltage
+    busIdx      # Buses: index
+    N           # Buses: total
+    Nr          # Buses: renewable
+    Ng          # Buses: conventional
+    k           # Buses: participation factors
 end
 
 # Define a type to hold instanton results. If there are N constraints, there will be 2N elements in 'score', 2N vectors in 'ρ',
