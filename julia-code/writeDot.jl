@@ -101,5 +101,5 @@ function writeDot(name, busIdx, busInj, renGen, f, t, lineFlow, lineLim, size=(1
     write(dotfile, "}")
     close(dotfile)
 
-    println("$(name).dot generated.\nUse \";dot -Tsvg $(name).dot -o $(name).svg\" to create an SVG.")
+    println("$(name).dot generated.\nUse \"run(`dot -Tsvg $(name).dot -o $(name).svg`)\" to create an SVG.")
 end

@@ -1,5 +1,5 @@
 function solver_activeFlow_droop(psDL)
-    # This function uses MOSEK to perform instanton analysis for the case with conventional generator droop resopnse.
+    # This function uses Ipopt to perform instanton analysis for the case with conventional generator droop resopnse.
 
     # unpack psDL (boilerplate):
     (Sb,f,t,r,x,b,Y,bustype,
@@ -64,9 +64,9 @@ end
 function droopDCModel(idx, sense, Rp, Gp, Dp, f, t, x, Y, bustype, Plim,k)
     # DROOP RESPONSE
     # Create model saturating line 'idx' in direction 'sense' (±1)
-    # This function uses JuMP and Mosek
+    # This function uses JuMP and Ipopt
     
-    m = Model(solver = MosekSolver()) # Use MOSEK to solve model
+    m = Model(solver = IpoptSolver()) # Use Ipopt to solve model
     N = length(Rp)
     @defVar(m, ρ[1:N] >= 0) # Add decision variables to model (renewable gen)
     @defVar(m, θ[1:N]) # Add bus angles

@@ -1,7 +1,7 @@
 function readRTS96Data();
     # Load RTS96 data
     # uses MAT
-    path="caseRTS96.mat"
+    path = "julia-code/caseRTS96.mat"
     caseRTS96 = matread(path); # import MATLAB workspace
 
     # Connect relevant MATLAB variables to Julia

@@ -3,7 +3,7 @@
 
 # Julia packages used in this code
 using JuMP   # numerical optimization package
-using Mosek  # Julia interface to MOSEK solver
+using Ipopt  # Julia interface to MOSEK solver
 using MAT    # Julia interface to MATLAB .mat binary files
 using PyCall # used to call python commands
 using PyPlot # Julia plotting package; wraps around Matplotlib
@@ -17,11 +17,11 @@ include("psDataLoad.jl")                        # Loads power system data from M
 include("readRTS96Data.jl")                     # Called by psDataLoad()
 include("writeDot.jl")                          # Produces a dot file showing power flow on the RTS-96 network
 
-include("lagrange_activeFlow_droop.jl")         # Lagrange with active flows and droop response
-include("solver_activeFlow_proportional.jl")    # Solver with active flows and proportional response
+#include("lagrange_activeFlow_droop.jl")         # Lagrange with active flows and droop response
+#include("solver_activeFlow_proportional.jl")    # Solver with active flows and proportional response
 include("solver_activeFlow_droop.jl")           # Solver with active flows and droop response
-include("solver_apparentFlow_droop.jl")         # Solver with active flows and droop response
-include("solver_currentFlow_droop.jl")          # Solver with current magnitude limits and droop response
+#include("solver_apparentFlow_droop.jl")         # Solver with active flows and droop response
+#include("solver_currentFlow_droop.jl")          # Solver with current magnitude limits and droop response
 
 #include("solver_activeFlow_droop.jl")  # Solver with active flows and droop response
 
