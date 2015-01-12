@@ -20,4 +20,4 @@
     });
     </script>
     <!-- End of mathjax configuration -->
-{%- endmacro %}
+{%- endmacro %}TeX-AMS_HTML
